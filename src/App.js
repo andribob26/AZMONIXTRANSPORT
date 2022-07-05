@@ -35,8 +35,8 @@ function Content() {
       }}
     >
       <Routes location={displayLocation}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/AZMONIXTRANSPORT" element={<HomePage />} />
+        <Route path="/AZMONIXTRANSPORT/detail/:id" element={<DetailPage />} />
       </Routes>
     </div>
   );
