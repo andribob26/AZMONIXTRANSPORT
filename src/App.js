@@ -36,7 +36,7 @@ function Content() {
       }}
     >
       <Routes location={displayLocation}>
-        <Route path="/" element={<HomePage />} />
+        <Route exact path="/" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
       </Routes>
     </div>
