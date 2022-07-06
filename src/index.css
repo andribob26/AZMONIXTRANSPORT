@@ -19,38 +19,60 @@
   }
 
   .fadeIn {
+    -webkit-animation: 0.5s fadeIn forwards;
     animation: 0.5s fadeIn forwards;
+    position: absolute;
+    width: 100vw;
+    left: 0rem;
+    right: 0;
+    padding: 2rem;
   }
   
   .fadeOut {
+    -webkit-animation: 0.5s fadeOut forwards;
     animation: 0.5s fadeOut forwards;
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    padding: 2rem;
   }
   
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translate(-20px, 0);
+      left: -1.25rem;
     }
     to {
       opacity: 1;
-      transform: translate(0px, 0px);
+      left: 0;
     }
   }
   
   @keyframes fadeOut {
     from {
       opacity: 1;
-      transform: translate(0px, 0px);
+      left: 0;
     }
     to {
-      transform: translate(-20px, 0);
       opacity: 0;
+      left: -1.25rem;
     }
   }
 
   .textInVisible{
     opacity: 0;
     visibility: hidden;
+  }
+
+  .categoryFixed{
+    width: 100vw;
+    position: fixed;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    left: 0;
+    right: 0;
+    top: 0;
   }
 
 

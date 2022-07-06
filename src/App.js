@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import HomePage from './pages/homePage/HomePage';
 import DetailPage from './pages/detailPage/DetailPage';
 
 function App() {
+  const basename = "AZMONIXTRANSPORT"
   return (
-    <div className="p-8">
-      <BrowserRouter>
+    <div className="relative">
+      <BrowserRouter basename={basename}>
         <Content />
       </BrowserRouter>
     </div>
@@ -35,7 +36,7 @@ function Content() {
       }}
     >
       <Routes location={displayLocation}>
-        <Route path="/AZMONIXTRANSPORT" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
       </Routes>
     </div>
