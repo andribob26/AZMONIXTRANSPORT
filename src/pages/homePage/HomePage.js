@@ -11,12 +11,15 @@ export const HomePage = () => {
     useEffect(() => {
         document.addEventListener('scroll', () => {
             if (categoryRef.current != null) {
+                console.log('====================================');
+                console.log(window.pageYOffset);
+                console.log('====================================');
                 if (window.pageYOffset >= 112) {
                     categoryRef.current.classList.add('categoryFixed')
-                    mainRef.current.classList.add('pt-20')
+                    mainRef.current.classList.add('pt-[6.375rem]')
                 }else{
                     categoryRef.current.classList.remove('categoryFixed')
-                    mainRef.current.classList.remove('pt-20')
+                    mainRef.current.classList.remove('pt-[6.375rem]')
                 }
             }
         })
