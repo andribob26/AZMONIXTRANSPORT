@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/AZMONIXTRANSPORT/static/css/main.3411fb3b.css",
-    "main.js": "/AZMONIXTRANSPORT/static/js/main.e4fe621f.js",
+    "main.css": "/AZMONIXTRANSPORT/static/css/main.bd9903a0.css",
+    "main.js": "/AZMONIXTRANSPORT/static/js/main.bb62d19e.js",
     "static/js/787.43ca6153.chunk.js": "/AZMONIXTRANSPORT/static/js/787.43ca6153.chunk.js",
     "service-worker.js": "/AZMONIXTRANSPORT/service-worker.js",
     "index.html": "/AZMONIXTRANSPORT/index.html",
-    "main.3411fb3b.css.map": "/AZMONIXTRANSPORT/static/css/main.3411fb3b.css.map",
-    "main.e4fe621f.js.map": "/AZMONIXTRANSPORT/static/js/main.e4fe621f.js.map",
+    "main.bd9903a0.css.map": "/AZMONIXTRANSPORT/static/css/main.bd9903a0.css.map",
+    "main.bb62d19e.js.map": "/AZMONIXTRANSPORT/static/js/main.bb62d19e.js.map",
     "787.43ca6153.chunk.js.map": "/AZMONIXTRANSPORT/static/js/787.43ca6153.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3411fb3b.css",
-    "static/js/main.e4fe621f.js"
+    "static/css/main.bd9903a0.css",
+    "static/js/main.bb62d19e.js"
   ]
 }
