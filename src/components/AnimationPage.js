@@ -1,46 +1,32 @@
-import React, { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { useSelector, useDispatch } from 'react-redux'
-import {transitionStageHandler} from '../store/slice/appSlice'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export const AnimationPage = ({ children }) => {
-    const transitionStage = useSelector(state => state.appSlice.transitionStage)
-    const dispatch = useDispatch()
-    const controls = useAnimation()
-    const variants = {
-        hidden: {
-            opacity: 0,
-            left: '-1.25rem'
-        },
-        show: {
-            opacity: 1,
-            left: 0
-        }
-    }
+    const location = useLocation()
+    const [displayLocation, setDisplayLocation] = useState(location);
+    const [transitionStage, setTransistionStage] = useState("fadeIn");
+
     useEffect(() => {
-        controls.start("show");
-    },[])
-    useEffect(() => {
-        if (transitionStage === 'fadeOut'){
-            controls.start("hidden");
-            dispatch(transitionStageHandler("fadeIn"))
-        }
-    }, [transitionStage]);
+        if (location !== displayLocation) setTransistionStage("fadeOut");
+    }, [location, displayLocation]);
+
     return (
-        <motion.div
-            className="fade"
-            variants={variants}
-            initial={{
-                opacity: 0,
-                left: '-1.25rem'
-            }}
-            animate={controls}
-            transition={{
-                duration: 0.5
-            }}
-        >
-            {children}
-        </motion.div>
+        <>
+            <div
+                className={`${transitionStage}`}
+                onAnimationEnd={() => {
+                    if (transitionStage === "fadeOut") {
+                        setTransistionStage("fadeIn");
+                        setDisplayLocation(location);
+                    }
+                }}
+            >
+
+            </div>
+            <div className="p-8">
+                {children}
+            </div >
+        </>
     )
 }
 

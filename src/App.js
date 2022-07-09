@@ -1,49 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import HomePage from './pages/homePage/HomePage';
-import DetailPage from './pages/detailPage/DetailPage';
-import { useDispatch, useSelector } from 'react-redux'
-import { AnimatePresence } from 'framer-motion'
-function App() {
+import React, {useEffect} from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import HomePage from './pages/homePage/HomePage'
+import DetailPage from './pages/detailPage/DetailPage'
+function App () {
+  useEffect(() => {
+    sessionStorage.setItem('isReload', true)
+  }, [])
+
   return (
-    <div className="relative">
+    <div className='relative'>
       <BrowserRouter>
         <Content />
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-
-function Content() {
-  const location = useLocation();
-  // const dispatch = useDispatch()
-  // const transitionStage = useSelector(state => state.appSlice.transitionStage)
-
-  // const [displayLocation, setDisplayLocation] = useState(location);
-  // const [transitionStage, setTransistionStage] = useState("fadeIn");
-
-  // useEffect(() => {
-
-  //   console.log(location !== displayLocation)
-  //   if (location.pathname !== displayLocation.pathname) {
-  //     dispatch(transitionStageHandler("fadeOut"))
-  //   }
-
-  // }, [location, displayLocation]);
-
-  // useEffect(() => {
-  //   console.log(displayLocation);
-  // })
-
+function Content () {
+  const location = useLocation()
   return (
-    <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route exact path='/' element={<HomePage />} />
+        <Route path='/detail/:id' element={<DetailPage />} />
       </Routes>
-    </AnimatePresence>
-  );
+  )
 }
 
-export default App;
+export default App

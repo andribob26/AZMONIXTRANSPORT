@@ -5,7 +5,7 @@ import appSlice from './slice/appSlice'
 // import contactSlice from './slices/contactSlice'
 
 const reducer = combineReducers({
-    appSlice,
+    appSlice
     // gallerySlice,
     // contactSlice
 })

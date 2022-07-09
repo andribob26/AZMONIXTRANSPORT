@@ -1,15 +1,8 @@
 import React from 'react'
 import Icon from '@mdi/react'
 import { mdiCarSeat, mdiClockTimeNineOutline, mdiStar } from '@mdi/js'
-import { useDispatch} from 'react-redux'
-import {transitionStageHandler} from '../../../store/slice/appSlice'
 
-
-export const Card = ({handleNavigate}) => {
-
-
-
-
+export const Card = ({ handleNavigate }) => {
   return (
     <div className='p-4 md:w-1/2 lg:w-1/4'>
       <div className='border border-blue-400 rounded-xl p-2 box-border'>
@@ -22,9 +15,17 @@ export const Card = ({handleNavigate}) => {
           <div className='flex justify-between items-center'>
             <div className='flex flex-col'>
               <h1 className='font-bold'>Kijang</h1>
-              <p className='flex font-semibold'><span><Icon path={mdiStar} size={1} color={"#FFD700"} /></span>4.5</p>
+              <p className='flex font-semibold'>
+                <span>
+                  <Icon path={mdiStar} size={1} color={'#FFD700'} />
+                </span>
+                4.5
+              </p>
             </div>
-            <button onClick={handleNavigate} className='border border-blue-400 rounded-xl px-4 font-semibold hover:bg-blue-400 transition-all duration-500'>
+            <button
+              onClick={handleNavigate}
+              className='border border-blue-400 rounded-xl px-4 font-semibold hover:bg-blue-400 transition-all duration-500'
+            >
               Book
             </button>
           </div>

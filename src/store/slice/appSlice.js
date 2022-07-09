@@ -1,19 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    transitionStage: "fadeIn"
+    isReload: false
 }
 
 const appSlice = createSlice({
-    name: "appSlice",
+    name: 'appSlice',
     initialState,
-    reducers:{
-        transitionStageHandler:(state, action)=>{
-            state.transitionStage = action.payload
+    reducers: {
+        reloadHandler: (state, action) => {
+            state.isReload = action.payload
         }
     }
 })
 
-export const { transitionStageHandler } = appSlice.actions
+export const { reloadHandler } = appSlice.actions
 
 export default appSlice.reducer
