@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../components/Header'
 // import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
@@ -7,6 +7,9 @@ import { mdiArrowLeftBoldOutline } from '@mdi/js'
 import ContentDetail from '../detailPage/components/ContentDetail'
 import Contact from '../detailPage/components/Contact'
 import ImageGallery from 'react-image-gallery'
+import { useDispatch, useSelector } from 'react-redux'
+import { transitionStageHandler } from '../../store/slice/appSlice'
+import AnimationPage from '../../components/AnimationPage'
 
 const images = [
     {
@@ -25,19 +28,27 @@ const images = [
         original: 'https://pict-b.sindonews.net/dyn/620/pena/news/2022/02/08/120/680163/mobil-buatan-indonesia-ini-mengaspal-di-luar-negeri-nxo.jpg',
         thumbnail: 'https://pict-b.sindonews.net/dyn/620/pena/news/2022/02/08/120/680163/mobil-buatan-indonesia-ini-mengaspal-di-luar-negeri-nxo.jpg',
     },
-    
+
 ]
 
 export const DetailPage = () => {
     // const { id } = useParams()
+    const dispatch = useDispatch()
 
     const navigate = useNavigate()
     const handleNavigate = () => {
-        navigate('/')
+        dispatch(transitionStageHandler("fadeOut"))
+        setTimeout(() => {
+            navigate(-1)
+        }, 500);
     }
 
+    // useEffect(() => {
+    //     dispatch(transitionStageHandler("fadeOut"))
+    // }, []);
+
     return (
-        <>
+        <AnimationPage>
             <Header>
                 <div className='flex justify-center relative'>
                     <button onClick={handleNavigate} className='absolute left-0'>
@@ -68,7 +79,7 @@ export const DetailPage = () => {
             </div>
             <ContentDetail />
             <Contact />
-        </>
+        </AnimationPage>
     )
 }
 

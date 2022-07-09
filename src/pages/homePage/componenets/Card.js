@@ -1,16 +1,14 @@
 import React from 'react'
 import Icon from '@mdi/react'
-import { useNavigate } from 'react-router-dom'
 import { mdiCarSeat, mdiClockTimeNineOutline, mdiStar } from '@mdi/js'
+import { useDispatch} from 'react-redux'
+import {transitionStageHandler} from '../../../store/slice/appSlice'
 
 
-export const Card = () => {
+export const Card = ({handleNavigate}) => {
 
-  const navigate = useNavigate()
 
-  const handleNavigate = () => {
-    navigate("/detail/hai")
-  }
+
 
   return (
     <div className='p-4 md:w-1/2 lg:w-1/4'>

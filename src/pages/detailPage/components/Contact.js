@@ -1,6 +1,7 @@
 import React from 'react'
 import Icon from '@mdi/react'
-import {mdiAccountCircleOutline, mdiPhoneInTalk, mdiMessageProcessing} from '@mdi/js'
+import { mdiAccountCircleOutline, mdiPhoneInTalk, mdiMessageProcessing, mdiWhatsapp } from '@mdi/js'
+import ReactWhatsapp from 'react-whatsapp';
 
 export const Contact = () => {
     return (
@@ -18,19 +19,21 @@ export const Contact = () => {
                         <p>Tour Guide</p>
                     </div>
                 </div>
-                <div className="p-2 hover:bg-blue-400 cursor-pointer border m-1 border-blue-400 rounded-xl">
+                {/* <div className="p-2 hover:bg-blue-400 cursor-pointer border m-1 border-blue-400 rounded-xl">
                     <Icon
                         path={mdiMessageProcessing}
                         size={1}
                     />
-                </div>
-                <div className="p-2 hover:bg-blue-400 cursor-pointer border border-blue-400 mr-1 rounded-xl">
-                    <Icon
-                        path={mdiPhoneInTalk}
-                        size={1}
-                        color="rgb(34 197 94)"
-                    />
-                </div>
+                </div> */}
+                <ReactWhatsapp number="+62 812-3943-1417">
+                    <div className="p-2 hover:bg-blue-400 cursor-pointer border border-blue-400 m-1 rounded-xl">
+                        <Icon
+                            path={mdiWhatsapp}
+                            size={1}
+                            color="rgb(34 197 94)"
+                        />
+                    </div>
+                </ReactWhatsapp>
             </div>
         </>
     )
